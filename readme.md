@@ -6,7 +6,7 @@
 
 ## Example
 
-    import http from 'httpRequest'
+    import http from 'pubcore-http'
     import {doSomething, feedback} from './yourCode'
 
     //POST some data, returns a Promise
