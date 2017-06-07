@@ -1,0 +1,23 @@
+{
+  "name": "httpRequest",
+  "version": "1.0.0",
+  "description": "returns a http request promise for web browser based apps",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --watch --compilers js:babel-core/register src/**/*.spec.js"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-preset-env": "^1.5.1",
+    "chai": "^4.0.2",
+    "fakexmlhttprequest": "0.0.1",
+    "mocha": "^3.4.2",
+    "sinon": "^2.3.2"
+  },
+  "babel": {
+    "presets": [
+      "env"
+    ]
+  }
+}
