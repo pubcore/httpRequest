@@ -1,6 +1,5 @@
 import {expect} from 'chai'
 import http from './http'
-import sinon from 'sinon'
 import FakeXMLHTTPRequests from 'fakexmlhttprequest'
 
 var requests = []
@@ -46,6 +45,7 @@ describe('httpRequest ' + new Date(), () => {
                 done()
             }
         ).catch(err => done(err))
+
         requests[0].respond(
             404,
             { "Content-Type": "application/json" },

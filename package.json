@@ -2,6 +2,10 @@
   "name": "httpRequest",
   "version": "1.0.0",
   "description": "returns a http request promise for web browser based apps",
+  "repository":{
+    "type":"git",
+    "url":"https://github.com/pubcore/httpRequest"    
+  },
   "main": "index.js",
   "scripts": {
     "test": "mocha --watch --compilers js:babel-core/register src/**/*.spec.js"

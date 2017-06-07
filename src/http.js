@@ -7,7 +7,7 @@ export default (uri, data, method='POST') => {
             }
 
             if(req.status != 200){
-                reject(new Error('HTTP Error:' + req.statusText), req.status)
+                reject(new Error('HTTP Error:' + req.statusText))
             }else{
                 var response = (typeof req.response == 'string') ?
                     JSON.parse(req.response)
