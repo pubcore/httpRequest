@@ -7,6 +7,7 @@
 ## Example
 
     import http from 'httpRequest'
+    import {doSomething, feedback} from './yourCode'
 
     //POST some data, returns a Promise
     http('https://my.domain.com/chat?locale=en-US', {text:'Hi!'}).then(
