@@ -2,9 +2,9 @@
   "name": "httpRequest",
   "version": "1.0.0",
   "description": "returns a http request promise for web browser based apps",
-  "repository":{
-    "type":"git",
-    "url":"https://github.com/pubcore/httpRequest"    
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pubcore/httpRequest"
   },
   "main": "index.js",
   "scripts": {
@@ -14,10 +14,9 @@
   "devDependencies": {
     "babel-cli": "^6.24.1",
     "babel-preset-env": "^1.5.1",
-    "chai": "^4.0.2",
-    "fakexmlhttprequest": "0.0.1",
     "mocha": "^3.4.2",
-    "sinon": "^2.3.2"
+    "chai": "^4.0.2",
+    "fakexmlhttprequest": "0.0.1"
   },
   "babel": {
     "presets": [
