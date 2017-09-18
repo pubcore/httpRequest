@@ -40,8 +40,11 @@ describe('httpRequest ' + new Date(), () => {
                 expect(true).to.be.false
                 done()
             },
-            (err, response) => {
+            (err) => {
                 expect(err).to.be.a("Error")
+				expect(err.status).to.be.a("Number")
+				expect(err.status).to.be.equal(404)
+				expect(err.body).to.be.a("String")
                 done()
             }
         ).catch(err => done(err))

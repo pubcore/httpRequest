@@ -7,3 +7,4 @@ node_modules/
 index.js
 # Optional npm cache directory
 .npm
+/nbproject
