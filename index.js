@@ -17,7 +17,7 @@ exports.default = function (uri, data) {
             if (req.status != 200) {
                 var err = new Error('HTTP Error:' + req.statusText);
                 err.status = req.status;
-                err.body = typeof err.response == 'string' ? req.response : req.responseText;
+                err.body = typeof err.response == 'string' ? req.response : req.response && JSON.stringify(req.response) || req.responseText;
                 reject(err);
             } else {
                 var response = typeof req.response == 'string' ? JSON.parse(req.response) : req.response || JSON.parse(req.responseText);
