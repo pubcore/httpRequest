@@ -31,7 +31,7 @@ describe('httpRequest ' + new Date(), () => {
             200,
             {"Content-Type": "application/json"},
             JSON.stringify(response)
-            )
+        )
     })
 
     it('handle http errors', done => {
@@ -53,6 +53,6 @@ describe('httpRequest ' + new Date(), () => {
             404,
             {"Content-Type": "application/json"},
             ''
-            )
+        )
     })
 })
