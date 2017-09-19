@@ -4,6 +4,6 @@ yarn-debug.log*
 yarn-error.log*
 
 node_modules/
-index.js
 # Optional npm cache directory
 .npm
+/nbproject

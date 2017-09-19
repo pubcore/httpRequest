@@ -8,9 +8,10 @@
   },
   "main": "index.js",
   "scripts": {
-    "test": "mocha --watch --compilers js:babel-core/register src/**/*.spec.js",
+    "test": "mocha --compilers js:babel-core/register src/**/*.spec.js",
     "build": "babel src/http.js --out-file index.js",
-    "prepublish": "npm run build"
+    "prepublish": "npm run build",
+    "watch": "watch \"npm run build\" ./src"
   },
   "license": "MIT",
   "devDependencies": {
@@ -18,7 +19,8 @@
     "babel-preset-env": "^1.5.2",
     "chai": "^4.0.2",
     "fakexmlhttprequest": "0.0.1",
-    "mocha": "^3.4.2"
+    "mocha": "^3.4.2",
+    "watch": "^1.0.2"
   },
   "babel": {
     "presets": [

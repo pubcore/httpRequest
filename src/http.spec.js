@@ -29,7 +29,7 @@ describe('httpRequest ' + new Date(), () => {
         ).catch(err => done(err))
         requests[0].respond(
             200,
-            { "Content-Type": "application/json" },
+            {"Content-Type": "application/json"},
             JSON.stringify(response)
         )
     })
@@ -40,15 +40,18 @@ describe('httpRequest ' + new Date(), () => {
                 expect(true).to.be.false
                 done()
             },
-            (err, response) => {
+            (err) => {
                 expect(err).to.be.a("Error")
+                expect(err.status).to.be.a("Number")
+                expect(err.status).to.be.equal(404)
+                expect(err.body).to.be.a("String")
                 done()
             }
         ).catch(err => done(err))
 
         requests[0].respond(
             404,
-            { "Content-Type": "application/json" },
+            {"Content-Type": "application/json"},
             ''
         )
     })
