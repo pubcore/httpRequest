@@ -15,13 +15,12 @@ export default (uri, data, method='POST') => {
                         || req.responseText;
                 reject(err);
             } else {
-                var {response, responseText} = req
-                if (typeof response == 'string') {
-                    resolve(response && JSON.parse(response) || null)
-                } else if (response === null || response) {
-                    resolve(response)
+                if (typeof req.response == 'string') {
+                    resolve(req.response && JSON.parse(req.response) || null)
+                } else if (req.response === null || req.response) {
+                    resolve(req.response)
                 } else {
-                    resolve(responseText && JSON.parse(responseText) || null)
+                    resolve(req.responseText && JSON.parse(req.responseText) || null)
                 }
             }
         }

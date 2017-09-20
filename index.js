@@ -20,15 +20,12 @@ exports.default = function (uri, data) {
                 err.body = typeof err.response == 'string' ? req.response : req.response && JSON.stringify(req.response) || req.responseText;
                 reject(err);
             } else {
-                var response = req.response,
-                    responseText = req.responseText;
-
-                if (typeof response == 'string') {
-                    resolve(response && JSON.parse(response) || null);
-                } else if (response === null || response) {
-                    resolve(response);
+                if (typeof req.response == 'string') {
+                    resolve(req.response && JSON.parse(req.response) || null);
+                } else if (req.response === null || req.response) {
+                    resolve(req.response);
                 } else {
-                    resolve(responseText && JSON.parse(responseText) || null);
+                    resolve(req.responseText && JSON.parse(req.responseText) || null);
                 }
             }
         };
