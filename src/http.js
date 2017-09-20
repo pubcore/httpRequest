@@ -15,10 +15,14 @@ export default (uri, data, method='POST') => {
                         || req.responseText;
                 reject(err);
             } else {
-                var response = typeof req.response == 'string' ? 
-                    JSON.parse(req.response) 
-                    : req.response || JSON.parse(req.responseText);
-                resolve(response);
+                var {response, responseText} = req
+                if (typeof response == 'string') {
+                    resolve(response && JSON.parse(response) || null)
+                } else if (response === null || response) {
+                    resolve(response)
+                } else {
+                    resolve(responseText && JSON.parse(responseText) || null)
+                }
             }
         }
 

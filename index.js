@@ -20,8 +20,16 @@ exports.default = function (uri, data) {
                 err.body = typeof err.response == 'string' ? req.response : req.response && JSON.stringify(req.response) || req.responseText;
                 reject(err);
             } else {
-                var response = typeof req.response == 'string' ? JSON.parse(req.response) : req.response || JSON.parse(req.responseText);
-                resolve(response);
+                var response = req.response,
+                    responseText = req.responseText;
+
+                if (typeof response == 'string') {
+                    resolve(response && JSON.parse(response) || null);
+                } else if (response === null || response) {
+                    resolve(response);
+                } else {
+                    resolve(responseText && JSON.parse(responseText) || null);
+                }
             }
         };
 
