@@ -33,6 +33,46 @@ describe('httpRequest ' + new Date(), () => {
             JSON.stringify(response)
         )
     })
+    
+    it('returns null string body', (done) => {
+        http('https://localhost', {}).then(
+            value => {
+                expect(value).to.be.null
+                done()
+            }
+        ).catch(err => done(err))
+        requests[0].respond(
+            200,
+            {"Content-Type": "application/json"},
+            'null'
+        )
+    })
+    it('returns empty body', (done) => {
+        http('https://localhost', {}).then(
+            value => {
+                expect(value).to.be.null
+                done()
+            }
+        ).catch(err => done(err))
+        requests[0].respond(
+            200,
+            {"Content-Type": "application/json"},
+            ''
+        )
+    })
+    it('returns null body', (done) => {
+        http('https://localhost', {}).then(
+            value => {
+                expect(value).to.be.null
+                done()
+            }
+        ).catch(err => done(err))
+        requests[0].respond(
+            200,
+            {"Content-Type": "application/json"},
+            null
+        )
+    })
 
     it('handle http errors', done => {
         http('', {}).then(

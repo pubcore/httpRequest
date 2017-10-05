@@ -20,8 +20,13 @@ exports.default = function (uri, data) {
                 err.body = typeof err.response == 'string' ? req.response : req.response && JSON.stringify(req.response) || req.responseText;
                 reject(err);
             } else {
-                var response = typeof req.response == 'string' ? JSON.parse(req.response) : req.response || JSON.parse(req.responseText);
-                resolve(response);
+                if (typeof req.response == 'string') {
+                    resolve(req.response && JSON.parse(req.response) || null);
+                } else if (req.response === null || req.response) {
+                    resolve(req.response);
+                } else {
+                    resolve(req.responseText && JSON.parse(req.responseText) || null);
+                }
             }
         };
 
