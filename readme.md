@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/pubcore/httpRequest.svg?branch=master)](https://travis-ci.org/pubcore/httpRequest)
+
 # little XMLHttpRequest wrapper to perform http(s) requests in web browser apps
 
 - only deals with application/json media
