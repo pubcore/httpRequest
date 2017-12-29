@@ -9,10 +9,14 @@ export default (uri, data, method='POST') => {
            if (req.status != 200) {
                 var err = new Error('HTTP Error:' + req.statusText);
                 err.status = req.status;
-                err.body = typeof err.response == 'string' ? 
-                    req.response 
-                    : req.response && JSON.stringify(req.response) 
+                try{
+                    err.body = typeof err.response == 'string' ?
+                        req.response
+                        : req.response && JSON.stringify(req.response)
                         || req.responseText;
+                }catch(e){
+                    err.body = ''
+                }
                 reject(err);
             } else {
                 if (typeof req.response == 'string') {
