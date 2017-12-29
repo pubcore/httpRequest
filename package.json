@@ -1,6 +1,6 @@
 {
   "name": "pubcore-http",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "returns a http request promise for web browser based apps",
   "repository": {
     "type": "git",
