@@ -1,30 +1,30 @@
 {
-  "name": "pubcore-http",
-  "version": "1.0.5",
-  "description": "returns a http request promise for web browser based apps",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/pubcore/httpRequest"
-  },
-  "main": "index.js",
-  "scripts": {
-    "test": "mocha --compilers js:babel-core/register src/**/*.spec.js",
-    "build": "babel src/http.js --out-file index.js",
-    "prepublish": "npm run build",
-    "watch": "watch \"npm run build\" ./src"
-  },
-  "license": "MIT",
-  "devDependencies": {
-    "babel-cli": "^6.24.1",
-    "babel-preset-env": "^1.5.2",
-    "chai": "^4.0.2",
-    "fakexmlhttprequest": "0.0.1",
-    "mocha": "^3.4.2",
-    "watch": "^1.0.2"
-  },
-  "babel": {
-    "presets": [
-      "env"
-    ]
-  }
+    "name": "pubcore-http",
+    "version": "1.0.5",
+    "description": "returns a http request promise for web browser based apps",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/pubcore/httpRequest"
+    },
+    "main": "index.js",
+    "scripts": {
+        "test": "mocha --compilers js:babel-core/register src/**/*.spec.js",
+        "build": "babel src/http.js --out-file index.js",
+        "prepare": "npm run build",
+        "watch": "babel --watch src/http.js --out-file index.js"
+    },
+    "license": "MIT",
+    "devDependencies": {
+        "babel-cli": "^6.26.0",
+        "babel-preset-env": "^1.7.0",
+        "chai": "^4.1.2",
+        "fakexmlhttprequest": "0.0.1",
+        "mocha": "^3.5.3"
+    },
+    "babel": {
+        "presets": [
+            "env"
+        ]
+    },
+    "keywords":["http-client", "json-only", "browser", "lightweight", "xmlhttprequest"]
 }
