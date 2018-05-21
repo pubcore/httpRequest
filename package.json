@@ -1,6 +1,6 @@
 {
     "name": "pubcore-http",
-    "version": "1.0.5",
+    "version": "1.0.6",
     "description": "returns a http request promise for web browser based apps",
     "repository": {
         "type": "git",
@@ -26,5 +26,11 @@
             "env"
         ]
     },
-    "keywords":["http-client", "json-only", "browser", "lightweight", "xmlhttprequest"]
+    "keywords": [
+        "http-client",
+        "json-only",
+        "browser",
+        "lightweight",
+        "xmlhttprequest"
+    ]
 }
