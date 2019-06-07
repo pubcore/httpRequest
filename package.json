@@ -8,22 +8,24 @@
     },
     "main": "index.js",
     "scripts": {
-        "test": "mocha --compilers js:babel-core/register src/**/*.spec.js",
+        "test": "mocha --require @babel/register src/**/*.spec.js",
         "build": "babel src/http.js --out-file index.js",
         "prepare": "npm run build",
         "watch": "babel --watch src/http.js --out-file index.js"
     },
     "license": "MIT",
     "devDependencies": {
-        "babel-cli": "^6.26.0",
-        "babel-preset-env": "^1.7.0",
-        "chai": "^4.1.2",
+        "@babel/cli": "^7.4.4",
+        "@babel/core": "^7.4.5",
+        "@babel/preset-env": "^7.4.5",
+        "@babel/register": "^7.4.4",
+        "chai": "^4.2.0",
         "fakexmlhttprequest": "0.0.1",
-        "mocha": "^3.5.3"
+        "mocha": "^6.1.4"
     },
     "babel": {
         "presets": [
-            "env"
+            "@babel/preset-env"
         ]
     },
     "keywords": [
