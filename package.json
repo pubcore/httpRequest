@@ -36,6 +36,5 @@
         "browser",
         "lightweight",
         "xmlhttprequest"
-    ],
-    "dependencies": {}
+    ]
 }
